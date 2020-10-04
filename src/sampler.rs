@@ -5,9 +5,8 @@
 // http://opensource.org/licenses/MIT>, at your option. This file may not be
 // copied, modified, or distributed except according to those terms.
 
-use cocoa_foundation::foundation::NSUInteger;
 
-use crate::depthstencil::MTLCompareFunction;
+use crate::{NSUInteger, depthstencil::MTLCompareFunction};
 use crate::DeviceRef;
 
 #[repr(u64)]

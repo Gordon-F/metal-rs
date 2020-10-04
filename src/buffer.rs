@@ -7,8 +7,6 @@
 
 use super::*;
 
-use cocoa_foundation::foundation::NSRange;
-
 pub enum MTLBuffer {}
 
 foreign_obj_type! {

@@ -6,9 +6,6 @@
 // copied, modified, or distributed except according to those terms.
 
 use super::*;
-
-use cocoa_foundation::foundation::{NSInteger, NSRange, NSUInteger};
-
 use std::ops::Range;
 
 #[repr(u64)]

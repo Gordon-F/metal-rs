@@ -7,7 +7,7 @@
 
 extern crate objc;
 
-use cocoa::{appkit::NSView, base::id as cocoa_id, foundation::NSRange};
+use cocoa::{appkit::NSView, base::id as cocoa_id};
 
 use metal::*;
 use objc::{rc::autoreleasepool, runtime::YES};

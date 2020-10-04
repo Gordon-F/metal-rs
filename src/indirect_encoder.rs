@@ -1,7 +1,5 @@
 use super::*;
 
-use cocoa_foundation::foundation::{NSRange, NSUInteger};
-
 bitflags! {
     #[allow(non_upper_case_globals)]
     pub struct MTLIndirectCommandType: NSUInteger {

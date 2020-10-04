@@ -6,8 +6,6 @@
 // copied, modified, or distributed except according to those terms.
 
 use super::*;
-
-use cocoa_foundation::foundation::{NSRange, NSUInteger};
 use objc::runtime::{NO, YES};
 
 #[repr(u64)]

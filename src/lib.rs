@@ -23,9 +23,9 @@ use std::mem;
 use std::ops::Deref;
 use std::os::raw::c_void;
 
-use cocoa_foundation::foundation::NSUInteger;
 use foreign_types::ForeignType;
 use objc::runtime::{Object, NO, YES};
+
 
 #[cfg(target_pointer_width = "64")]
 pub type CGFloat = f64;
@@ -407,6 +407,7 @@ mod depthstencil;
 mod device;
 mod drawable;
 mod encoder;
+mod foundation;
 mod heap;
 mod indirect_encoder;
 mod library;
@@ -434,6 +435,7 @@ pub use {
     device::*,
     drawable::*,
     encoder::*,
+    foundation::*,
     heap::*,
     indirect_encoder::*,
     library::*,

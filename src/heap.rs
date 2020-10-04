@@ -7,8 +7,6 @@
 
 use super::*;
 
-use cocoa_foundation::foundation::NSUInteger;
-
 pub enum MTLHeap {}
 
 foreign_obj_type! {

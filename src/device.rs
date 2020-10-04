@@ -6,8 +6,6 @@
 // copied, modified, or distributed except according to those terms.
 
 use block::{Block, ConcreteBlock};
-use cocoa_foundation::base::id;
-use cocoa_foundation::foundation::NSUInteger;
 use foreign_types::ForeignType;
 use objc::runtime::{Object, BOOL, NO, YES};
 
@@ -1535,11 +1533,8 @@ impl DeviceRef {
         src: &str,
         options: &CompileOptionsRef,
     ) -> Result<Library, String> {
-        use cocoa_foundation::base::nil as cocoa_nil;
-        use cocoa_foundation::foundation::NSString as cocoa_NSString;
-
         unsafe {
-            let source = cocoa_NSString::alloc(cocoa_nil).init_str(src);
+            let source = NSString::alloc(nil).init_str(src);
             let mut err: *mut Object = ptr::null_mut();
             let library: *mut MTLLibrary = msg_send![self, newLibraryWithSource:source
                                                                         options:options
@@ -1563,12 +1558,8 @@ impl DeviceRef {
     }
 
     pub fn new_library_with_file<P: AsRef<Path>>(&self, file: P) -> Result<Library, String> {
-        use cocoa_foundation::base::nil as cocoa_nil;
-        use cocoa_foundation::foundation::NSString as cocoa_NSString;
-
         unsafe {
-            let filename =
-                cocoa_NSString::alloc(cocoa_nil).init_str(file.as_ref().to_string_lossy().as_ref());
+            let filename = NSString::alloc(nil).init_str(file.as_ref().to_string_lossy().as_ref());
 
             let library: *mut MTLLibrary = try_objc! { err =>
                 msg_send![self, newLibraryWithFile:filename.as_ref()
